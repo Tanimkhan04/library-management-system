@@ -1,0 +1,14 @@
+/* ===============================
+   STUDENT HOMEPAGE
+================================ */
+.student-home {
+    padding: 30px;
+    background-color: #f4f6f9;
+    min-height: 100vh;
+}
+
+.home-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
