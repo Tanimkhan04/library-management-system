@@ -8,7 +8,7 @@ if (isset($_POST['login'])) {
     $password = $_POST['password'];
 
     // Dummy login (for exam/demo)
-    if ($email == "student@gmail.com" && $password == "1234") {
+    if ($email == "www.tanim.khan60@gmail.com" && $password == "1234") {
         $_SESSION['student'] = $email;
         header("Location: dashboard.php");
     } else {
