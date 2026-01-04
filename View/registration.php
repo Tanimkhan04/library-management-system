@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Registration</title>
+</head>
+<body>
+
+<h1>Student Registration</h1>
+
+<form>
+  <label>Name:</label><br>
+  <input type="text"><br><br>
+
+  <label>Email:</label><br>
+  <input type="text"><br><br>
+
+  <label>Password:</label><br>
+  <input type="password"><br><br>
+
+  <button type="submit">Register</button>
+</form>
+
+</body>
+</html>
