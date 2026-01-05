@@ -20,11 +20,11 @@ if (isset($_POST['submit'])) {
 <form method="post">
   Rating:
   <select>
-    <option>⭐</option>
-    <option>⭐⭐</option>
-    <option>⭐⭐⭐</option>
-    <option>⭐⭐⭐⭐</option>
-    <option>⭐⭐⭐⭐⭐</option>
+    <option>*</option>
+    <option>**</option>
+    <option>***</option>
+    <option>****</option>
+    <option>*****</option>
   </select>
   <br><br>
 
