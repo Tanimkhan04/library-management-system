@@ -1,36 +1,40 @@
 <?php
-session_start();
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
+include("db.php");
+
+if (isset($_POST['login'])) {
+
+    $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // Validate input
-    if (empty($username) || empty($password)) {
-        echo "Username and password are required.";
+    // Empty validation
+    if (empty($email) || empty($password)) {
+        echo "All fields are required!";
         exit();
     }
 
-    // Connect to database
-    $conn = new mysqli("localhost", "root", "", "library");
+    // SQL query
+    $query = "SELECT * FROM users 
+              WHERE email='$email' AND password='$password'";
 
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+    $result = mysqli_query($conn, $query);
 
-    // Prepare statement to prevent SQL injection
-    $stmt = $conn->prepare("SELECT * FROM students WHERE username = ? AND password = ?");
-    $stmt->bind_param("ss", $username, $password);
-    $stmt->execute();
-    $result = $stmt->get_result();
+    if (mysqli_num_rows($result) == 1) {
 
-    if ($result->num_rows > 0) {
-        $_SESSION['username'] = $username;
-        header("Location: ../View/dashboard.php");
-        exit();
+        $row = mysqli_fetch_assoc($result);
+
+        $_SESSION['user_id'] = $row['id'];
+        $_SESSION['user_name'] = $row['name'];
+        $_SESSION['role'] = $row['role'];
+
+        // Role based login
+        if ($row['role'] == "admin") {
+            header("Location: admin_dashboard.php");
+        } else {
+            header("Location: dashboard.php");
+        }
+
     } else {
-        echo "Invalid username or password.";
+        echo "Invalid Email or Password!";
     }
-
-    $stmt->close();
 }
 ?>
