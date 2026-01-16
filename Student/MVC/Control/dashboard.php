@@ -3,11 +3,12 @@ include("config.php");
 
 if (!isset($_SESSION['student'])) {
     header("Location: login.php"); 
-    
+
 }
 ?>
 
 <!DOCTYPE html>
+
 <html>
 <head>
   <title>Student Dashboard</title>
