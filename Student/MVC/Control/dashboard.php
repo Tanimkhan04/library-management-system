@@ -1,7 +1,8 @@
 <?php
 include("config.php");
 
-if (!isset($_SESSION['student'])) {
+if (!isset($_SESSION['student'])) 
+{
     header("Location: login.php"); 
 
 }
