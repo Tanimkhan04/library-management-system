@@ -4,7 +4,7 @@ include("config.php");
 $msg = "";
 
 if (isset($_POST['submit'])) {
-    $msg = "Thank you for your review ⭐";
+    $msg = "Thank you for your review ⭐ ";
 }
 ?>
 
