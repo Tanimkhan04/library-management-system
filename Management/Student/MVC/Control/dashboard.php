@@ -14,7 +14,7 @@ if (!isset($_SESSION['student']))
 <head>
   <style>
 body {
-  background-color: lightblue;
+  background-color: burlywood;
   font-family: verdana;
 }
 
@@ -57,6 +57,17 @@ button {
 button:hover {
   background-color: blue;
 }
+button {
+  margin-top: 15px;
+  width: 100%;
+  background-color: darkblue;
+  color: white;
+}
+button:hover {
+  background-color: blue;
+}
+
+
 
 </style>
 
