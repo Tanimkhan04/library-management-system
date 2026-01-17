@@ -35,6 +35,17 @@ h2 {
   font-size: 30px;
   color: orange;
 }
+button {
+  background-color: purple;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+
 </style>
 </head>
 <body>
