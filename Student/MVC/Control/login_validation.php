@@ -6,7 +6,7 @@ if (isset($_POST['login'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // Empty validation
+    
     if (empty($email) || empty($password)) {
         echo "All fields are required!";
         exit();
