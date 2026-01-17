@@ -2,17 +2,18 @@
 include("config.php");
 
  $email = "";
+ $password = "";
 
 
 
     
-   // if ($email == "www.tanim.khan60@gmail.com" && $password == "1234") {
-       // $_SESSION['student'] = $email;
-       // header("Location: dashboard.php");
-    //} else {
-       // $error = "Invalid Email or Password!";
+    if ($email == "www.tanim.khan60@gmail.com" && $password == "1234") {
+        $_SESSION['student'] = $email;
+       header("Location: dashboard.php");
+    } else {
+        $error = "Invalid Email or Password!";
     }
-}
+
 ?>
 
 <!DOCTYPE html>
