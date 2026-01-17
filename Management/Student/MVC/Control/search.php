@@ -22,6 +22,18 @@ button {
   background-color: darkblue;
   color: white;
 }
+button:hover {
+  background-color: blue;
+}
+a {
+  display: block;
+  margin-top: 20px;
+  color: darkblue;
+}
+a:hover {
+  color: blue;
+}
+
 </style>
 </head>
 <body>
