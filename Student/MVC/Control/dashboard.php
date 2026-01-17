@@ -13,6 +13,7 @@ if (!isset($_SESSION['student']))
 <html>
 <head>
   <title>Student Dashboard</title>
+  
 </head>
 <body>
 
