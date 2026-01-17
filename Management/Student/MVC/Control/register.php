@@ -5,7 +5,7 @@ if (isset($_POST['register'])) {
     $name = $_POST['name'];
     $email = $_POST['email'];
 
-    // create session after registration
+    $password = $_POST['password'];
     $_SESSION['student'] = $email;
 
     header("Location: dashboard.php");
@@ -104,7 +104,7 @@ function validateRegister()
     return false;
   }
 
-  return true; // allow PHP redirect
+  return true; 
 }
 </script>
 
