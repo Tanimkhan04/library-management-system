@@ -20,7 +20,39 @@ if (isset($_POST['login'])) {
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Student Login</title>
+  <style>
+body {
+  background-color: lightblue;
+  font-family: verdana;
+}
+
+form {
+  background-color: white;
+  width: 300px;
+  padding: 20px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  color: darkblue;
+}
+
+input {
+  width: 100%;
+  margin-top: 10px;
+  padding: 8px;
+}
+
+button {
+  margin-top: 15px;
+  width: 100%;
+  background-color: darkblue;
+  color: white;
+}
+</style>
+<title>Student Login</title>
+
 </head>
 <body>
 
