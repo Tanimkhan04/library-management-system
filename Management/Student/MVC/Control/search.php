@@ -8,7 +8,7 @@ include("config.php");
   <title>Search Book</title>
   <style>
 body {
-  background-color: grey;
+  background-color: lightpink;
   font-family: verdana;
 }
 

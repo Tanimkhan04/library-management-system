@@ -1,9 +1,11 @@
 <?php
 include("config.php");
 
- $email = "";
+ $error = "";
  $password = "";
-
+if (isset($_POST['login'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
 
     
@@ -13,6 +15,7 @@ include("config.php");
     } else {
         $error = "Invalid Email or Password!";
     }
+}
 
 ?>
 
