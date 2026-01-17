@@ -20,6 +20,20 @@ p {
 span {
   color: red;
 }
+h1 {
+  color: white;
+  text-align: center;
+}
+a {
+  text-decoration: none;
+  color: darkblue;
+}
+a:hover {
+  color: blue;
+}
+
+
+
 </style>
 </head>
 <body>
