@@ -12,7 +12,7 @@ if (isset($_POST['login'])) {
         exit();
     }
 
-    // SQL query
+    
     $query = "SELECT * FROM users 
               WHERE email='$email' AND password='$password'";
 
@@ -26,7 +26,7 @@ if (isset($_POST['login'])) {
         $_SESSION['user_name'] = $row['name'];
         $_SESSION['role'] = $row['role'];
 
-        // Role based login
+        
         if ($row['role'] == "admin") {
             header("Location: admin_dashboard.php");
         } else {
