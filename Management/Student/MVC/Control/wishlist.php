@@ -12,6 +12,30 @@ if (isset($_POST['add'])) {
 <html>
 <head>
   <title>Wishlist</title>
+  <style>
+body {
+  background-color: lightblue;
+  font-family: verdana;
+}
+
+div {
+  background-color: white;
+  width: 300px;
+  padding: 20px;
+  margin: auto;
+  text-align: center;
+  border-radius: 10px;
+}
+
+h2 {
+  color: darkblue;
+}
+
+.star {
+  font-size: 30px;
+  color: orange;
+}
+</style>
 </head>
 <body>
 
