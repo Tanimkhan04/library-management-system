@@ -1,29 +1,27 @@
-
 <?php
 include("config.php");
 
- $error = "";
- $password = "";
+$error = "";
+
 if (isset($_POST['login'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-
-    
     if ($email == "www.tanim.khan60@gmail.com" && $password == "1234") {
         $_SESSION['student'] = $email;
-       header("Location: dashboard.php");
+        header("Location: dashboard.php");
     } else {
         $error = "Invalid Email or Password!";
     }
 }
-
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-  <style>
+<title>Student Login</title>
+
+<style>
 body {
   background-color: lightblue;
   font-family: verdana;
@@ -34,6 +32,7 @@ form {
   width: 300px;
   padding: 20px;
   margin: auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
 h1 {
@@ -52,31 +51,76 @@ button {
   width: 100%;
   background-color: darkblue;
   color: white;
+  padding: 8px;
 }
 
 button:hover {
   background-color: blue;
 }
 
-</style>
-<title>Student Login</title>
+a {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+}
 
+#error {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+}
+</style>
 </head>
+
 <body>
 
 <h1>Student Login</h1>
 
-<form method="post">
-  Email:<br>
-  <input type="text" name="email"><br><br>
+<form method="post" onsubmit="return validateLogin()">
 
-  Password:<br>
-  <input type="password" name="password"><br><br>
+  Email:
+  <input type="text" id="email" name="email">
 
-  <button name="login">Login</button>
+  Password:
+  <input type="password" id="password" name="password">
+
+  <button type="submit" name="login">Login</button>
+
 </form>
 
-<p style="color:red;"><?php echo $error; ?></p>
+<a href="register.php">New user? Register here</a>
+
+<div id="error"><?php echo $error; ?></div>
+
+<script>
+function validateLogin()
+{
+  var email = document.getElementById("email").value.trim();
+  var password = document.getElementById("password").value.trim();
+  var errorDiv = document.getElementById("error");
+
+  if(email === "" || password === "")
+  {
+    errorDiv.innerHTML = "Please fill all fields";
+    return false;
+  }
+
+  var emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  if(!email.match(emailPattern))
+  {
+    errorDiv.innerHTML = "Invalid email format";
+    return false;
+  }
+
+  if(password.length < 4)
+  {
+    errorDiv.innerHTML = "Password must be at least 4 characters";
+    return false;
+  }
+
+  return true;
+}
+</script>
 
 </body>
 </html>
