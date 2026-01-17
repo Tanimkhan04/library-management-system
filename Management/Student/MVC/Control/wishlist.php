@@ -11,7 +11,7 @@ if (isset($_POST['add'])) {
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Wishlist</title>
+  <title>WISHLIST</title>
   <style>
 body {
   background-color: lightblue;
@@ -44,6 +44,11 @@ button {
   font-size: 16px;
   border-radius: 5px;
 }
+button:hover {
+  background-color: indigo;
+}
+
+
 
 
 </style>
