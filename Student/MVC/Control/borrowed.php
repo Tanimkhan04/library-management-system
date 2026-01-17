@@ -3,6 +3,7 @@ include("config.php");
 ?>
 
 <!DOCTYPE html>
+
 <html>
 <head>
   <title>Borrowed Books</title>
