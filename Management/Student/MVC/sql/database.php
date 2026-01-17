@@ -9,3 +9,6 @@ CREATE TABLE users (
     password VARCHAR(255),
     role VARCHAR(20)
 );
+INSERT INTO users (name, email, password, role)
+VALUES ('Student One', 'Tanim.khan60@gmail.com', '1234', 'student');
+

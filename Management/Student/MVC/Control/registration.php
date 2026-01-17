@@ -1,5 +1,7 @@
 <?php
 include "../DB/db.php";
+include("config.php");
+
  
 $success=$error="";
 if($_SERVER["REQUEST_METHOD"]== "POST")
@@ -18,6 +20,7 @@ $hassPassword= password_hash($password,PASSWORD_DEFAULT);
  
 $sql= "INSERT INTO users(username,password,email) VALUES ('$username','$hassPassword','$email')";
 if($conn->query($sql))
+
 {
     $success="Registration Complete you can do the login";
 }
