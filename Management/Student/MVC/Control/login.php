@@ -1,18 +1,23 @@
 <?php
 include("config.php");
 
-$error = "";
+$error = $emailErr = "";
 
 if (isset($_POST['login'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
+     if ($_POST["email"] == "") {
+        $emailErr = "Email is required";
+        header("Location: dashboard.php");
+    } else if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+        $emailErr = "Invalid email format";
 
     
-    if ($email == "www.tanim.khan60@gmail.com" && $password == "1234") {
-        $_SESSION['student'] = $email;
-        header("Location: dashboard.php");
-    } else {
-        $error = "Invalid Email or Password!";
+   // if ($email == "www.tanim.khan60@gmail.com" && $password == "1234") {
+       // $_SESSION['student'] = $email;
+       // header("Location: dashboard.php");
+    //} else {
+       // $error = "Invalid Email or Password!";
     }
 }
 ?>
