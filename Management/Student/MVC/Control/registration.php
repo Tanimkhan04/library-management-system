@@ -61,6 +61,18 @@ input {
   width: 100%;
   margin-top: 10px;
 }
+
+button {
+  margin-top: 15px;
+  width: 100%;
+  background-color: darkblue;
+  color: white;
+}
+button:hover {
+  background-color: blue;
+}
+
+
 </style>
 </head>
 

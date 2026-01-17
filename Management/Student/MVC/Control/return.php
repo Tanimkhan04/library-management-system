@@ -32,7 +32,7 @@ h2 {
 }
 
 button {
-  background-color: orange;
+  background-color: burlywood;
   color: black;
   padding: 10px;
   width: 100%;
@@ -42,8 +42,9 @@ button {
 }
 
 button:hover {
-  background-color: darkorange;
+  background-color: sandybrown;
 }
+
 </style>
 
 </head>
