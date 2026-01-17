@@ -29,6 +29,38 @@ div {
   width: 400px;
   margin: auto;
 }
+ul {
+  list-style-type: none;
+  padding: 0;
+  width: 200px;
+  margin: auto;
+}
+li {
+  background-color: white;
+  margin: 10px 0;
+  padding: 10px;
+  text-align: center;
+}
+a {
+  text-decoration: none;
+  color: darkblue;
+}
+a:hover {
+  color: blue;
+}
+button {
+  margin-top: 15px;
+  width: 100%;
+  background-color: darkblue;
+  color: white;
+}
+button:hover {
+  background-color: blue;
+}
+
+
+
+
 </style>
 
 
@@ -46,7 +78,7 @@ div {
   <li><a href="review.php">Rate & Review</a></li>
 </ul>
 
-<a href="logout.php">Logout</a>
+<a href="logout.php">     Logout</a>
 
 </body>
 </html>

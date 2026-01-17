@@ -50,6 +50,11 @@ button {
   background-color: darkblue;
   color: white;
 }
+
+button:hover {
+  background-color: blue;
+}
+
 </style>
 <title>Student Login</title>
 
