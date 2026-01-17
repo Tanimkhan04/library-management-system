@@ -36,7 +36,7 @@ h2 {
   color: orange;
 }
 button {
-  background-color: purple;
+  background-color: black;
   color: white;
   padding: 10px;
   width: 100%;

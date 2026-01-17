@@ -8,7 +8,7 @@ include("config.php");
   <title>Search Book</title>
   <style>
 body {
-  background-color: lightblue;
+  background-color: grey;
   font-family: verdana;
 }
 
@@ -36,6 +36,8 @@ a:hover {
 
 
 
+
+
 </style>
 </head>
 <body>
@@ -45,12 +47,12 @@ a:hover {
 <form method="post">
   <input type="text" name="book" placeholder="Enter book name">
   <br><br>
-  <button name="search">Search</button>
+  <button name="Search">Search</button>
 </form>
 
 <?php
-if (isset($_POST['search'])) {
-    echo "<p>Book Found! Request Sent ✔</p>";
+if (isset($_POST['Search'])) {
+    echo "<p>Book Found! Request Sent </p>";
 }
 ?>
 
