@@ -44,7 +44,27 @@ else{
 <html>
 <head>
     <title>User Registration</title>
+    <style>
+body {
+  background-color: lightblue;
+  font-family: verdana;
+}
+
+form {
+  background-color: white;
+  width: 300px;
+  padding: 20px;
+  margin: auto;
+}
+
+input {
+  width: 100%;
+  margin-top: 10px;
+}
+</style>
 </head>
+
+
 <body>
     <h2>Register</h2>
     <form method="post" action="">
