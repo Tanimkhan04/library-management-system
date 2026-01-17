@@ -12,7 +12,26 @@ if (!isset($_SESSION['student']))
 
 <html>
 <head>
-  <title>Student Dashboard</title>
+  <style>
+body {
+  background-color: lightblue;
+  font-family: verdana;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+div {
+  background-color: white;
+  padding: 20px;
+  width: 400px;
+  margin: auto;
+}
+</style>
+
+
   
 </head>
 <body>
