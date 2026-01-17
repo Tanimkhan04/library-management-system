@@ -6,6 +6,23 @@ include("config.php");
 <html>
 <head>
   <title>Search Book</title>
+  <style>
+body {
+  background-color: lightblue;
+  font-family: verdana;
+}
+
+input {
+  width: 300px;
+  padding: 8px;
+}
+
+button {
+  padding: 8px;
+  background-color: darkblue;
+  color: white;
+}
+</style>
 </head>
 <body>
 
