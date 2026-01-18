@@ -1,53 +1,23 @@
 <?php
-include "../DB/db.php";
 include("config.php");
 
- 
-$success=$error="";
-if($_SERVER["REQUEST_METHOD"]== "POST")
-{
-$username=$_POST["username"];
-$password=$_POST["password"];
-$email=$_POST["email"];
- 
-if(empty($username)||empty($password)||empty($email))
-{
-$error="All the field must be fill_up";
-}
- 
-else{
-$hassPassword= password_hash($password,PASSWORD_DEFAULT);
- 
-$sql= "INSERT INTO users(username,password,email) VALUES ('$username','$hassPassword','$email')";
-if($conn->query($sql))
+if (isset($_POST['register'])) {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
 
-{
-    $success="Registration Complete you can do the login";
+    $password = $_POST['password'];
+    $_SESSION['student'] = $email;
+
+    header("Location: dashboard.php");
 }
- 
-else{
- 
-    $error = "Error: .".$conn->error;
-}
- 
- 
-}
- 
- 
- 
-}
- 
 ?>
- 
- 
- 
- 
- 
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>User Registration</title>
-    <style>
+<title>Student Registration</title>
+
+<style>
 body {
   background-color: lightblue;
   font-family: verdana;
@@ -58,11 +28,18 @@ form {
   width: 300px;
   padding: 20px;
   margin: auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+h1 {
+  text-align: center;
+  color: darkblue;
 }
 
 input {
   width: 100%;
   margin-top: 10px;
+  padding: 8px;
 }
 
 button {
@@ -71,28 +48,66 @@ button {
   background-color: darkblue;
   color: white;
 }
-button:hover {
-  background-color: blue;
+
+#error {
+  text-align: center;
+  color: red;
+  margin-top: 10px;
 }
-
-
 </style>
 </head>
 
-
 <body>
-    <h2>Register</h2>
-    <form method="post" action="">
-        Username: <input type="text" name="username"><br><br>
-        Password: <input type="password" name="password"><br><br>
-        Email: <input type="email" name="email"><br><br>
-        <input type="submit" value="Register">
-    </form>
- 
-    <p style="color:green;"><?php echo $success; ?></p>
-    <p style="color:red;"><?php echo $error; ?></p>
+
+<h1>Student Registration</h1>
+
+<form method="post" onsubmit="return validateRegister()">
+
+  Name:
+  <input type="text" id="name" name="name">
+
+  Email:
+  <input type="text" id="email" name="email">
+
+  Password:
+  <input type="password" id="password" name="password">
+
+  <button type="submit" name="register">Register</button>
+</form>
+
+<div id="error"></div>
+
+<script>
+function validateRegister()
+{
+  var name = document.getElementById("name").value.trim();
+  var email = document.getElementById("email").value.trim();
+  var password = document.getElementById("password").value.trim();
+  var errorDiv = document.getElementById("error");
+
+  if(name === "" || email === "" || password === "")
+  {
+    errorDiv.innerHTML = "Please fill all fields";
+    return false;
+  }
+
+  var emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  if(!email.match(emailPattern))
+  {
+    errorDiv.innerHTML = "Invalid email format";
+    return false;
+  }
+
+  if(password.length < 4)
+  {
+    errorDiv.innerHTML = "Password must be at least 4 characters";
+    return false;
+  }
+
+  return true; 
+}
+</script>
+
 </body>
+
 </html>
- 
- 
- 

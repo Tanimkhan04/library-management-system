@@ -1,17 +1,43 @@
+
 <?php
 include("config.php");
 
+$error = "";
+
 if (isset($_POST['register'])) {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
 
-    $password = $_POST['password'];
-    $_SESSION['student'] = $email;
+    $name = trim($_POST['name']);
+    $email = trim($_POST['email']);
+    $password = trim($_POST['password']);
 
-    header("Location: dashboard.php");
+    // Empty check
+    if ($name == "" || $email == "" || $password == "") {
+        $error = "All fields are required!";
+    } else {
+
+        // Check if email already exists
+        $check = "SELECT * FROM students WHERE email='$email'";
+        $result = mysqli_query($conn, $check);
+
+        if (mysqli_num_rows($result) > 0) {
+            $error = "Email already registered!";
+        } else {
+
+            // Insert student
+            $insert = "INSERT INTO students (name, email, password)
+                       VALUES ('$name', '$email', '$password')";
+
+            if (mysqli_query($conn, $insert)) {
+                $_SESSION['student'] = $email;
+                header("Location: dashboard.php");
+                exit();
+            } else {
+                $error = "Registration failed!";
+            }
+        }
+    }
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +51,7 @@ body {
 
 form {
   background-color: white;
-  width: 300px;
+  width: 320px;
   padding: 20px;
   margin: auto;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
@@ -47,11 +73,16 @@ button {
   width: 100%;
   background-color: darkblue;
   color: white;
+  padding: 8px;
+}
+
+button:hover {
+  background-color: blue;
 }
 
 #error {
-  text-align: center;
   color: red;
+  text-align: center;
   margin-top: 10px;
 }
 </style>
@@ -61,52 +92,29 @@ button {
 
 <h1>Student Registration</h1>
 
-<form method="post" onsubmit="return validateRegister()">
+<form method="post">
 
   Name:
-  <input type="text" id="name" name="name">
+  <input type="text" name="name">
 
   Email:
-  <input type="text" id="email" name="email">
+  <input type="text" name="email">
 
   Password:
-  <input type="password" id="password" name="password">
+  <input type="password" name="password">
 
   <button type="submit" name="register">Register</button>
+
 </form>
 
-<div id="error"></div>
+<div id="error">
+  <?php echo $error; ?>
+</div>
 
-<script>
-function validateRegister()
-{
-  var name = document.getElementById("name").value.trim();
-  var email = document.getElementById("email").value.trim();
-  var password = document.getElementById("password").value.trim();
-  var errorDiv = document.getElementById("error");
-
-  if(name === "" || email === "" || password === "")
-  {
-    errorDiv.innerHTML = "Please fill all fields";
-    return false;
-  }
-
-  var emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-  if(!email.match(emailPattern))
-  {
-    errorDiv.innerHTML = "Invalid email format";
-    return false;
-  }
-
-  if(password.length < 4)
-  {
-    errorDiv.innerHTML = "Password must be at least 4 characters";
-    return false;
-  }
-
-  return true; 
-}
-</script>
+<p style="text-align:center;">
+Already have an account?  
+<a href="login.php">Login</a>
+</p>
 
 </body>
 </html>
