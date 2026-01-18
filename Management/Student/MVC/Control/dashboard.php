@@ -6,6 +6,8 @@ if (!isset($_SESSION['student']))
     header("Location: login.php"); 
 
 }
+
+
 ?>
 
 <!DOCTYPE html>
