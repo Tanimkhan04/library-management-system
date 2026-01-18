@@ -28,7 +28,7 @@ if (isset($_POST['login'])) {
 
         
         if ($row['role'] == "admin") {
-            header("Location: admin_dashboard.php");
+            header("Location: student_dashboard.php");
         } else {
             header("Location: dashboard.php");
         }
