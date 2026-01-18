@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 $host = "localhost";
 $user = "root";
 $password = "";     
-$database = "wt_o";
+$database = "library_db";
 $conn = new mysqli(hostname: $host, username: $user, password: $password, database: $database);
 if (!$conn) {
     die("Connection failed: " . $conn->connect_error);
@@ -17,4 +17,5 @@ else{
 
 }
 
+session_start();
 ?>
