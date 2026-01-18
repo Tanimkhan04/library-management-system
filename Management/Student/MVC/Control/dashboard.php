@@ -8,7 +8,9 @@ if (!isset($_SESSION['student']))
 }
 
 
+
 ?>
+
 
 <!DOCTYPE html>
 
@@ -71,8 +73,6 @@ button:hover {
 
 
 
-
-
 </style>
 
 
@@ -83,6 +83,7 @@ button:hover {
 <h1>Welcome, <?php echo $_SESSION['student']; ?></h1>
 
 <ul>
+  
   <li><a href="search.php">Search & Request Book</a></li>
   <li><a href="borrowed.php">Borrowed Books</a></li>
   <li><a href="return.php">Return Book</a></li>
