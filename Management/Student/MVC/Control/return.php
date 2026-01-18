@@ -4,7 +4,7 @@ include("config.php");
 $msg = "";
 
 if (isset($_POST['return'])) {
-    $msg = "Return Request Submitted Successfully ✔";
+    $msg = "Return Request Submitted Successfully ✅ ";
 }
 ?>
 
@@ -52,7 +52,10 @@ button:hover {
 
 <h1>Return Book</h1>
 
-<p>Book: Web Technology</p>
+
+<form method="post">
+  <input type="text" name="book" placeholder="Enter book name">
+  <br><br>
 
 <form method="post">
   <button name="return">Submit Return Request</button>
