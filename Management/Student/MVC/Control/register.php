@@ -148,7 +148,5 @@ function validateRegister()
 }
 </script>
 
-
-
 </body>
 </html>
