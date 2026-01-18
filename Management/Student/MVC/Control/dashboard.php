@@ -50,9 +50,9 @@ a:hover {
 }
 button {
   margin-top: 15px;
-  width: 100%;
+  width: 10%;
   background-color: darkblue;
-  color: white;
+  color: brown;
 }
 button:hover {
   background-color: blue;
@@ -66,6 +66,8 @@ button {
 button:hover {
   background-color: blue;
 }
+
+
 
 
 
@@ -84,9 +86,11 @@ button:hover {
   <li><a href="return.php">Return Book</a></li>
   <li><a href="wishlist.php">Wishlist</a></li>
   <li><a href="review.php">Rate & Review</a></li>
+
+
+  <li><a href="logout.php">Logout</a></li>
 </ul>
 
-<a href="logout.php">     Logout</a>
 
 </body>
 </html>

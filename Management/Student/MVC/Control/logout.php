@@ -16,7 +16,7 @@ body {
 p {
   font-size: 20px;
   text-align: center;
-  color: darkgreen;
+  color: gray;
 }
 </style>
 </head>
