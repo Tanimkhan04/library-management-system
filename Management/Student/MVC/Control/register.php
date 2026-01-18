@@ -10,12 +10,12 @@ if (isset($_POST['register'])) {
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
 
-    // Empty check
+    // Server-side empty check
     if ($name == "" || $email == "" || $password == "") {
         $error = "All fields are required!";
     } else {
 
-        // Check if email already exists
+        // Check duplicate email
         $check = "SELECT * FROM students WHERE email='$email'";
         $result = mysqli_query($conn, $check);
 
@@ -74,6 +74,7 @@ button {
   background-color: darkblue;
   color: white;
   padding: 8px;
+  cursor: pointer;
 }
 
 button:hover {
@@ -92,16 +93,16 @@ button:hover {
 
 <h1>Student Registration</h1>
 
-<form method="post">
+<form method="post" onsubmit="return validateRegister()">
 
   Name:
-  <input type="text" name="name">
+  <input type="text" name="name" id="name">
 
   Email:
-  <input type="text" name="email">
+  <input type="text" name="email" id="email">
 
   Password:
-  <input type="password" name="password">
+  <input type="password" name="password" id="password">
 
   <button type="submit" name="register">Register</button>
 
@@ -112,9 +113,40 @@ button:hover {
 </div>
 
 <p style="text-align:center;">
-Already have an account?  
+Already have an account?
 <a href="login.php">Login</a>
 </p>
+
+<script>
+function validateRegister()
+{
+  var name = document.getElementById("name").value.trim();
+  var email = document.getElementById("email").value.trim();
+  var password = document.getElementById("password").value.trim();
+  var errorDiv = document.getElementById("error");
+
+  if(name === "" || email === "" || password === "")
+  {
+    errorDiv.innerHTML = "Please fill all fields";
+    return false;
+  }
+
+  var emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  if(!email.match(emailPattern))
+  {
+    errorDiv.innerHTML = "Invalid email format";
+    return false;
+  }
+
+  if(password.length < 4)
+  {
+    errorDiv.innerHTML = "Password must be at least 4 characters";
+    return false;
+  }
+
+  return true; // allow PHP
+}
+</script>
 
 </body>
 </html>
