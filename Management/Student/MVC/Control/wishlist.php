@@ -61,6 +61,17 @@ button:hover {
   <p>Database Systems</p>
   <button name="add">Add to Wishlist</button>
 </form>
+<p>Add this book to your favorites</p>
+<select>
+    <option>*</option>
+    <option>**</option>
+    <option>***</option>
+    <option>****</option>
+    <option>*****</option>
+  </select>
+  <br><br>
+  
+
 
 <p style="color:blue;"><?php echo $msg; ?></p>
 
