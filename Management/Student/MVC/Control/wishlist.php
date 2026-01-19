@@ -72,8 +72,6 @@ button:hover {
   <br><br>
   
 
-
-  
 <p style="color:blue;"><?php echo $msg; ?></p>
 
 <a href="dashboard.php">Back</a>
