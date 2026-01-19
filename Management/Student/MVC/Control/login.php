@@ -2,26 +2,31 @@
 
 include("config.php");
 
-
-
 $error = "";
 
-
-
-
 if (isset($_POST['login'])) {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
 
-    if ($email == "www.tanim.khan60@gmail.com" && $password == "1234") {
-        $_SESSION['student'] = $email;
-        header("Location: dashboard.php");
+    $email = trim($_POST['email']);
+    $password = trim($_POST['password']);
+
+    if ($email == "" || $password == "") {
+        $error = "All fields are required!";
     } else {
-        $error = "Invalid Email or Password!";
+
+        // Check user in database
+        $query = "SELECT * FROM students WHERE email='$email' AND password='$password'";
+        $result = mysqli_query($conn, $query);
+
+        if (mysqli_num_rows($result) == 1) {
+            $_SESSION['student'] = $email;
+            header("Location: dashboard.php");
+            exit();
+        } else {
+            $error = "Invalid Email or Password!";
+        }
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -124,7 +129,7 @@ function validateLogin()
     return false;
   }
 
-  return true;
+  return true; 
 }
 </script>
 
