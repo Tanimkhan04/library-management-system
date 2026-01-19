@@ -6,8 +6,7 @@
 <body>
 
 <p>You have successfully logged out.</p>
-<a href="login.html">Login Again</a>
-
+<a href="login.php">Login Again</a>
 
 
 </body>
