@@ -13,7 +13,7 @@ if (isset($_POST['login'])) {
         $error = "All fields are required!";
     } else {
 
-        // Check user in database
+        
         $query = "SELECT * FROM students WHERE email='$email' AND password='$password'";
         $result = mysqli_query($conn, $query);
 
@@ -27,6 +27,9 @@ if (isset($_POST['login'])) {
     }
 }
 ?>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
