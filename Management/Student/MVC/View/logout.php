@@ -8,6 +8,5 @@
 <p>You have successfully logged out.</p>
 <a href="login.html">Login Again</a>
 
-
 </body>
 </html>
