@@ -43,7 +43,17 @@ button:hover {
 </style>
 </head>
 
-<body>
+<body>Rating:
+  
+  <select>
+    <option>*</option>
+    <option>**</option>
+    <option>***</option>
+    <option>****</option>
+    <option>*****</option>
+  </select>
+  <br><br>
+
 
 <div>
   <h2>Rate & Review</h2>
