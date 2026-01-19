@@ -2,11 +2,11 @@
 session_start();
 include("config.php");
 
-// Read raw JSON input
+
 $rawData = file_get_contents("php://input");
 $data = json_decode($rawData, true);
 
-// Safety check
+
 if (!$data || !isset($data['email']) || !isset($data['password'])) {
     echo json_encode([
         "status" => "error",
@@ -25,7 +25,7 @@ if (mysqli_num_rows($result) == 1) {
 
     $_SESSION['student'] = $email;
 
-    // Cookie (1 day)
+    
     setcookie("student_email", $email, time() + 86400, "/");
 
     echo json_encode([
@@ -39,4 +39,6 @@ if (mysqli_num_rows($result) == 1) {
         "message" => "Invalid Email or Password"
     ]);
 }
+
+
 ?>
