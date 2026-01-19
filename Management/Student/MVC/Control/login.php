@@ -13,15 +13,19 @@ if (isset($_POST['login'])) {
         $error = "All fields are required!";
     } else {
 
-        
-        $query = "SELECT * FROM students WHERE email='$email' AND password='$password'";
+
+
+      $query = "SELECT * FROM students WHERE email='$email' AND password='$password'";
         $result = mysqli_query($conn, $query);
 
-        if (mysqli_num_rows($result) == 1) {
-            $_SESSION['student'] = $email;
+ if (mysqli_num_rows($result) == 1) {
+     $_SESSION['student'] = $email;
+      setcookie("student_email", $email, time() + (86400), "/");
+
+
             header("Location: dashboard.php");
             exit();
-        } else {
+     } else {
             $error = "Invalid Email or Password!";
         }
     }
