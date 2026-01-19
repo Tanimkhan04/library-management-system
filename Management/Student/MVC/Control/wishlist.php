@@ -4,7 +4,7 @@ include("config.php");
 $msg = "";
 
 if (isset($_POST['add'])) {
-    $msg = "Book added to Wishlist ❤️";
+    $msg = "Book added to Wishlist ";
 }
 ?>
 
