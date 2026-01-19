@@ -70,8 +70,7 @@ button:hover {
     <option>*****</option>
   </select>
   <br><br>
-  
-
+   
 <p style="color:blue;"><?php echo $msg; ?></p>
 
 <a href="dashboard.php">Back</a>
