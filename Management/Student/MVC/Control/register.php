@@ -151,6 +151,5 @@ function validateRegister()
 
 
 
-
 </body>
 </html>
