@@ -1,7 +1,9 @@
 
 <?php
 session_start();
+
 session_destroy();
+
 setcookie("student_email","",time()-3600,"/");
 header("Location: login.php");
 ?>
@@ -9,7 +11,8 @@ header("Location: login.php");
 <html>
 <head>
 <style>
-body {
+body
+ {
   background-color: lightblue;
   font-family: verdana;
 }
